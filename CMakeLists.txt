@@ -1,10 +1,13 @@
 cmake_minimum_required(VERSION 3.2)
 
-project(helloworld VERSION 0.0.$ENV{TRAVIS_BUILD_NUMBER})
+project(helloworld)
+
+set (helloworld_VERSION_MAJOR 0)
+set (helloworld_VERSION_MINOR $ENV{TRAVIS_BUILD_NUMBER})
 
 find_package(Boost COMPONENTS unit_test_framework REQUIRED)
 
-configure_file(version.h.in ${PROJECT_SOURCE_DIR}/version.h)
+configure_file(${PROJECT_SOURCE_DIR}/version.h.in ${PROJECT_SOURCE_DIR}/version.h)
 
 add_executable(helloworld_cli main.cpp)
 
