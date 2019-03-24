@@ -8,6 +8,6 @@ int main()
 {
     auto logger = spdlog::stdout_logger_mt("console");
     logger->info("version {} was started", version());
-
+    std::cout << "HELLO WORLD!" << '\n';
     return 0;
 }
