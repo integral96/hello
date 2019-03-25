@@ -7,9 +7,11 @@ set(PROJECT_MINOR_VERSION 0)
 set(PROJECT_VERSION_PATCH $ENV{TRAVIS_BUILD_NUMBER})
 set(FULL_VERSION ${PROJECT_MAJOR_VERSION}.${PROJECT_MINOR_VERSION}.${PROJECT_VERSION_PATCH})
 
+find_package(Threads REQUIRED)
+
 find_package(Boost COMPONENTS unit_test_framework REQUIRED)
 
-configure_file(${PROJECT_SOURCE_DIR}/version.h.in ${PROJECT_SOURCE_DIR}/version.h)
+configure_file(version.h.in ${PROJECT_SOURCE_DIR}/version.h)
 
 add_executable(helloworld_cli main.cpp)
 
