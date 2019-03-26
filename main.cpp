@@ -9,6 +9,6 @@ int main()
     //auto logger = spdlog::stdout_logger_mt("console");
     //logger->info("version {} was started", version());
     std::cout << "build " << version() <<std::endl;
-    std::cout << "HELLO WORLD!" << '\n';
+    std::cout << "Hello, World!" << '\n';
     return 0;
 }
